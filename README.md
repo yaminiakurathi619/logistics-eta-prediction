@@ -41,6 +41,7 @@ Build an end-to-end workflow that:
 - eta_estimates.csv
 - delay_reasons.csv
 - ground_truth.csv
+- service_levels.csv
 
 ## Seed
 
@@ -65,7 +66,7 @@ The generated datasets are validated for:
 
 ## Reproducibility
 
-All datasets are generated using seed:
+All datasets are generated using a fixed seed:
 
 20261022
 
@@ -79,15 +80,6 @@ All datasets are generated using seed:
 | Facilities | 100 |
 | Weather Events | 100 |
 
-## Edge Cases
-
-The following anomaly labels are included:
-
-- TIME_ORDER_VIOLATION
-- DATA_LEAKAGE
-- INVALID_STATE_TRANSITION
-- IMPOSSIBLE_ROUTE_ORDER
-
 ## Output
 
 The generator exports:
@@ -95,8 +87,6 @@ The generator exports:
 - CSV datasets
 - Validation report
 - Documentation
-
-All outputs are generated using a fixed seed for reproducibility.
 
 ## Run
 
