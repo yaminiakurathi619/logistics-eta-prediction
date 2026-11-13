@@ -1,0 +1,11 @@
+carrier_id,carrier_name,reliability_score
+CAR-001,Carrier 1,0.93
+CAR-002,Carrier 2,0.91
+CAR-003,Carrier 3,0.96
+CAR-004,Carrier 4,0.81
+CAR-005,Carrier 5,0.96
+CAR-006,Carrier 6,0.84
+CAR-007,Carrier 7,0.8
+CAR-008,Carrier 8,0.96
+CAR-009,Carrier 9,0.83
+CAR-010,Carrier 10,0.84
