@@ -46,6 +46,29 @@ Build an end-to-end workflow that:
 
 20261022
 
+## Validation
+
+The generated datasets are validated for:
+
+- Primary key uniqueness
+- Foreign key consistency
+- Allowed value checks
+- Duplicate detection
+- Dataset completeness
+
+## Edge Cases Included
+
+- TIME_ORDER_VIOLATION
+- DATA_LEAKAGE
+- INVALID_STATE_TRANSITION
+- IMPOSSIBLE_ROUTE_ORDER
+
+## Reproducibility
+
+All datasets are generated using seed:
+
+20261022
+
 ## Run
 
 ```bash
