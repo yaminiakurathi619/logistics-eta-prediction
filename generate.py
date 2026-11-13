@@ -134,6 +134,45 @@ shipment_legs_df.to_csv(
     index=False
 )
 
+tracking_events = []
+
+event_types = [
+    "PICKED_UP",
+    "ARRIVED_FACILITY",
+    "DEPARTED_FACILITY",
+    "IN_TRANSIT",
+    "DELIVERED"
+]
+
+event_counter = 1
+
+for i in range(1, 101):
+
+    shipment_id = f"SHP-2026-{i:06d}"
+
+    for _ in range(3):
+
+        tracking_events.append({
+            "event_id":
+                f"EVT-{i:06d}-{event_counter:06d}",
+
+            "shipment_id":
+                shipment_id,
+
+            "event_type":
+                random.choice(event_types)
+        })
+
+        event_counter += 1
+
+tracking_events_df = pd.DataFrame(
+    tracking_events
+)
+
+tracking_events_df.to_csv(
+    "output/tracking_events.csv",
+    index=False
+)
 
 
 print("carriers.csv generated")
@@ -141,3 +180,4 @@ print("facilities.csv generated")
 print("shipments.csv generated")
 print("routes.csv generated")
 print("shipment_legs.csv generated")
+print("tracking_events.csv generated")
