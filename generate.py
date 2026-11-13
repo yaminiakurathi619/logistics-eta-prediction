@@ -80,7 +80,64 @@ shipments_df.to_csv(
     "output/shipments.csv",
     index=False
 )
+routes = []
+
+for i in range(1, 51):
+
+    routes.append({
+        "route_id": f"RTE-{i:03d}",
+        "route_name": f"Route {i}",
+        "expected_duration_hours": random.randint(12, 120)
+    })
+
+routes_df = pd.DataFrame(routes)
+
+routes_df.to_csv(
+    "output/routes.csv",
+    index=False
+)
+shipment_legs = []
+
+for i in range(1, 101):
+
+    shipment_id = f"SHP-2026-{i:06d}"
+
+    for leg in range(1, 4):
+
+        shipment_legs.append({
+            "leg_id":
+            f"LEG-{shipment_id}-{leg:02d}",
+
+            "shipment_id":
+            shipment_id,
+
+            "sequence_no":
+            leg,
+
+            "from_facility":
+            random.choice(
+                facilities_df["facility_id"].tolist()
+            ),
+
+            "to_facility":
+            random.choice(
+                facilities_df["facility_id"].tolist()
+            )
+        })
+
+shipment_legs_df = pd.DataFrame(
+    shipment_legs
+)
+
+shipment_legs_df.to_csv(
+    "output/shipment_legs.csv",
+    index=False
+)
+
+
 
 print("carriers.csv generated")
 print("facilities.csv generated")
 print("shipments.csv generated")
+print("routes.csv generated")
+print("shipment_legs.csv generated")
