@@ -1,0 +1,4 @@
+service_level_id,service_name,target_hours
+SL-001,EXPRESS,24
+SL-002,STANDARD,72
+SL-003,ECONOMY,120

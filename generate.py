@@ -284,6 +284,59 @@ ground_truth_df.to_csv(
     "output/ground_truth.csv",
     index=False
 )
+service_levels = [
+
+    {
+        "service_level_id": "SL-001",
+        "service_name": "EXPRESS",
+        "target_hours": 24
+    },
+
+    {
+        "service_level_id": "SL-002",
+        "service_name": "STANDARD",
+        "target_hours": 72
+    },
+
+    {
+        "service_level_id": "SL-003",
+        "service_name": "ECONOMY",
+        "target_hours": 120
+    }
+
+]
+
+service_levels_df = pd.DataFrame(
+    service_levels
+)
+
+service_levels_df.to_csv(
+    "output/service_levels.csv",
+    index=False
+)
+eta_estimates = []
+
+for i in range(1, 101):
+
+    eta_estimates.append({
+        "eta_id": f"ETA-SHP-2026-{i:06d}",
+        "shipment_id": f"SHP-2026-{i:06d}",
+        "predicted_hours_remaining": random.randint(1, 120),
+        "prediction_status": random.choice([
+            "ON_TIME",
+            "AT_RISK",
+            "DELAYED"
+        ])
+    })
+
+eta_df = pd.DataFrame(
+    eta_estimates
+)
+
+eta_df.to_csv(
+    "output/eta_estimates.csv",
+    index=False
+)
 
 print("carriers.csv generated")
 print("facilities.csv generated")
@@ -295,3 +348,5 @@ print("weather_events.csv generated")
 print("facility_queue.csv generated")
 print("delay_reasons.csv generated")
 print("ground_truth.csv generated")
+print("service_levels.csv generated")
+print("eta_estimates.csv generated")
