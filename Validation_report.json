@@ -1,0 +1,10 @@
+{
+  "primary_key_validation": "PASSED",
+  "foreign_key_validation": "PASSED",
+  "duplicate_check": "PASSED",
+  "enum_validation": "PASSED",
+  "date_validation": "PASSED",
+  "lifecycle_validation": "PASSED",
+  "generated_at": "2026-11-13",
+  "seed": 20261022
+}
